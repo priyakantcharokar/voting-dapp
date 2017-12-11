@@ -12,6 +12,10 @@ $(document).ready(function() {
   });
 
   $('#voteSubmit').click(function(event) {
+    $('#voteSubmit').prop('disabled', true);
+    $("#voteSubmit").removeClass("btn btn-primary").addClass("btn btn-warning");
+    
+    $("#voteSubmit").html('Voting..');
     const headers = new Headers({
       "Content-Type": "application/json",
     });
@@ -24,6 +28,10 @@ $(document).ready(function() {
     .then(res => res.json())
     .then(res => {
       $('#' + res.name).html(res.votes);
+      $('#voteSubmit').prop('disabled', false);
+      $("#voteSubmit").removeClass("btn btn-warning").addClass("btn btn-primary");
+      $("#voteSubmit").html('Vote');
+      $('#candidateName').val("");
     }).catch(function() {
       // Error
     });
