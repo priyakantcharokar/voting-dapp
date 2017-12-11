@@ -19,9 +19,10 @@ $(document).ready(function () {
       });
     });
 
+
   $("img").click(function () {
     //alert(this.id);
-    
+
     if (this.id == 'buttonRama') {
       var candidateName = "Rama";
       processVote(candidateName);
@@ -34,12 +35,8 @@ $(document).ready(function () {
       var candidateName = "Yangli";
       processVote(candidateName);
     }
-   
   });
 })
-
-
-
 
 function processVote(candidateName) {
   //alert("processVote " + candidateName);

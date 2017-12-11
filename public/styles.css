@@ -14,3 +14,6 @@ div.imagetiles div.col-lg-3.col-md-3.col-sm-3.col-xs-6{
     font-weight: 900;
 }
 
+.img-blue:hover {
+    background: blue;
+}
