@@ -13,44 +13,4 @@ div.imagetiles div.col-lg-3.col-md-3.col-sm-3.col-xs-6{
     font-size: 30px;
     font-weight: 900;
 }
-/* .withImageAndIcon {
-    font-weight: bold;
-}
 
-.withImageAndIcon > div {
-    vertical-align: middle;
-    display:inline-block;
-    margin-right: 0.2em;
-}
-
-.withImageAndIcon > div > i {
-    float: right;
-    line-height:72px;
-    color: green;
-    text-shadow: 2px 2px 0 rgba(255,255,255,1), -2px 2px 0 rgba(255,255,255,1),2px -2px 0 rgba(255,255,255,1), -2px -2px 0 rgba(255,255,255,1);
-}
-
-.voter1 {
-    line-height: 50px;
-    width: 250px;
-    height: 250px;
-    background: transparent url("images/Rama.png") no-repeat;    
-}
-
-.voter2 {
-    line-height: 50px;
-    width: 250px;
-    height: 250px;
-    background: url("images/Laura.png") no-repeat;    
-}
-
-.voter3 {
-    line-height: 50px;
-    width: 250px;
-    height: 250px;
-    background: transparent url("images/Yangli.png") no-repeat;    
-}
-
-.withFolder32 i {
-    line-height:48px !important;
-} */
