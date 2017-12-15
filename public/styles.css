@@ -2,8 +2,13 @@
 @import url('//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css');
 @import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
 
+html {
+  height: 100%;
+}
+
 body {
   font-family: 'Oswald', sans-serif !important;
+  height: 100%;
 }
 
 div.imagetiles div.col-lg-3.col-md-3.col-sm-3.col-xs-6{
@@ -30,21 +35,43 @@ div.imagetiles div.col-lg-3.col-md-3.col-sm-3.col-xs-6{
     margin-left: 50px;
 }
 
-.blur   {
-    filter: blur(5px);
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
+.wrap {
+  height: 100vh;
+  display: flex;
 }
-#overlay    {
-    position: fixed;
-    display: none;
-    left: 0px;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    background: rgba(255,255,255,.8);
-    z-index: 999;
+
+main {
+  flex: 1;
+  display: flex;
 }
+ 
+aside, article {
+  overflow-y: scroll;
+  padding: 2em;
+}
+ 
+aside {
+  flex: 1;
+}
+ 
+article {
+  flex: 2;
+}
+
+.block {
+    border: 3px solid blue;
+    padding: 2px 2px 2px 2px;
+    margin-top:2px;
+}
+
+.blocknumber{
+    text-align: center;
+    vertical-align: middle;
+    
+}
+
+.txn {
+    font-size: 12px;
+}
+
 

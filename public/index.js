@@ -1,27 +1,13 @@
 
 
 $(document).ready(function () {
-  fetch('/candidates')
-    .then(res => res.json())
-    .then(res => {
-      console.log(res);
-      $.each(res.candidates, function (index, candidate) {
-        //console.log(candidate.name + "   " + candidate.votes);
-        if ("Rama" === candidate.name) {
-          $('#votesRama').html(candidate.votes);
-        }
-        if ("Phil" === candidate.name) {
-          $('#votesPhil').html(candidate.votes);
-        }
-        if ("Yangli" === candidate.name) {
-          $('#votesYangli').html(candidate.votes);
-        }
-      });
-    });
+  refreshBlocks();
+});
 
 
+$(document).ready(function () {
   $("img").click(function () {
-    //alert(this.id);
+    alert(this.id);
 
     if (this.id == 'buttonRama') {
       var candidateName = "Rama";
@@ -36,10 +22,12 @@ $(document).ready(function () {
       processVote(candidateName);
     }
   });
-})
+
+});
+
 
 function processVote(candidateName) {
-  //alert("processVote " + candidateName);
+  alert("processVote " + candidateName);
   const headers = new Headers({
     "Content-Type": "application/json",
   });
@@ -52,6 +40,7 @@ function processVote(candidateName) {
     .then(res => {
       if (res.name == "Rama") {
         $('#votesRama').html(res.votes);
+
       }
       if (res.name == "Phil") {
         $('#votesPhil').html(res.votes);
@@ -59,7 +48,31 @@ function processVote(candidateName) {
       if (res.name == "Yangli") {
         $('#votesYangli').html(res.votes);
       }
-      
+      refreshBlocks();
     })
+}
+
+function refreshBlocks() {
+  fetch('/getBlocks')
+    .then(res => res.json())
+    .then(res => {
+      console.log("refreshBlocks");
+      $("#blocks").html("");
+      $.each(res.blocks, function (index, block) {
+        if (block != null) {
+          var hash = block.hash;
+          $('#blocks').append("<div class='block'><div class='blocknumber'>Block Number: " +
+            +block.number +
+            "</div><div>Txn:<span class='txn'>" +
+            +hash +
+            "</span></div><div>Gas usage:" +
+            +block.gasUsed +
+            "</div><div>Block Time: " +
+            +block.timestamp +
+            "</div></div>");
+          console.log(block.hash);
+        }
+      });
+    });
 }
 
