@@ -59,6 +59,7 @@ function processVote(candidateName) {
       if (res.name == "Yangli") {
         $('#votesYangli').html(res.votes);
       }
+      
     })
 }
 
